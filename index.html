@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment8</title>
+</head>
+<style>
+    .calculator {
+    margin: 0 auto;
+    max-width: 350px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 0;
+    box-shadow: 0px 1px 20px 4px rgb(61 75 61);
+}
+
+   
+       
+    
+    #result{
+        width: 340px;
+    height: 60px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 25px;
+    border:none;
+    margin-top: 20px;
+    background: #deebde;
+    box-shadow: inset 0px 0px 13px 0px #c1b7b7;
+ 
+}
+.outputdiv {
+    width: 350px;
+    height: 100px;
+}
+
+    
+    .btn{
+    width: 75px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    background: rgb(27, 27, 27);
+    color: white;
+    border-color: rgb(255, 255, 255);
+    border-radius: 35%;
+    margin: 6px;
+    border: none;
+       
+    }
+    .btn:hover{
+        background-color: #567269;
+    }
+</style>
+<body>
+    <div class="calculator">
+        <div class="outputdiv">
+            <input type="text" id="result" >
+        </div>
+        <div class="inputdiv">
+            <input type="button" class="btn" value="c" onclick="alldelete()">
+            <input type="button" class="btn" value="DEL" onclick="del()">
+            <input type="button" class="btn" value="(" onclick="calculator('(')">
+            <input type="button" class="btn" value=")" onclick="calculator(')')">
+            
+        </div>
+        <div class="inputdiv">
+            <input type="button"  class="btn" value="7" onclick="calculator('7')">
+            <input type="button" class="btn" value="8" onclick="calculator('8')">
+            <input type="button" class="btn" value="9" onclick="calculator('9')">
+            <input type="button" class="btn" value="*" onclick="calculator('*')">
+        </div>
+        <div class="inputdiv">
+            <input type="button" class="btn" value="4" onclick="calculator('4')">
+            <input type="button" class="btn" value="5" onclick="calculator('5')">
+            <input type="button" class="btn" value="6" onclick="calculator('6')">
+            <input type="button" class="btn" value="-" onclick="calculator('-')">
+        </div>
+        <div class="inputdiv">
+            <input type="button" class="btn" value="1" onclick="calculator('1')">
+            <input type="button" class="btn" value="2" onclick="calculator('2')">
+            <input type="button" class="btn" value="3" onclick="calculator('3')">
+            <input type="button" class="btn" value="+" onclick="calculator('+')">
+        </div>
+        <div class="inputdiv">
+            <input type="button" class="btn" value="0" onclick="calculator('0')">
+            <input type="button" class="btn" value="." onclick="calculator('.')">
+            <input type="button" class="btn" value="/" onclick="calculator('/')">
+            <input type="button" class="btn" value="=" onclick="result()">
+        </div>
+    </div>
+
+    <script>
+      
+       function alldelete(){
+         document.getElementById('result').value = "";
+       }
+       function calculator(inputvalue){
+        document.getElementById('result').value += inputvalue;
+        
+       }
+       function result(){
+        var inpt=document.getElementById('result').value ;
+        var store= eval(inpt);
+        document.getElementById('result').value = store;
+
+        
+       }
+       function del(){
+       document.getElementById('result').value=document.getElementById('result').value.slice(0,-1);
+       
+       }
+    </script>
+</body>
+</html>
